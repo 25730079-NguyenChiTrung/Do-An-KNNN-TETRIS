@@ -22,4 +22,10 @@ struct Piece {
     char symbol;                         
 };
 
+struct GameState {
+    int board[BOARD_HEIGHT][BOARD_WIDTH]; 
+    Piece currentPiece;                     
+    Piece nextPiece;                                         
+};
+
 #endif
