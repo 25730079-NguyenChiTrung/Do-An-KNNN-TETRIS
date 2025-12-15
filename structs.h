@@ -15,4 +15,11 @@ const int BOARD_WIDTH = 10;
 const int BOARD_HEIGHT = 20;
 const int PIECE_SIZE = 4;  
 
+struct Piece {
+    int shape[PIECE_SIZE][PIECE_SIZE];  
+    int x, y;                           
+    int type;                            
+    char symbol;                         
+};
+
 #endif
