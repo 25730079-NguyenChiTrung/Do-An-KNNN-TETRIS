@@ -34,7 +34,21 @@ struct GameState {
     bool gameOver;                                         
 };
 
-const int SHAPES[7][PIECE_SIZE][PIECE_SIZE] = {};
+const int SHAPES[7][PIECE_SIZE][PIECE_SIZE] = {
+    {
+        {0, 0, 0, 0},
+        {1, 1, 0, 1},
+        {0, 0, 0, 0},
+        {0, 0, 0, 0}
+    },
+    // O - Hinh vuong
+    {
+        {0, 0, 0, 0},
+        {0, 1, 1, 0},
+        {0, 1, 1, 0},
+        {0, 0, 0, 0}
+    },
+};
 
 const char PIECE_SYMBOLS[7] = {'I', 'O', 'T', 'S', 'Z', 'J', 'L'};
 #endif
