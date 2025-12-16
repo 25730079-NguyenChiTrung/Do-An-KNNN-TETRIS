@@ -25,7 +25,13 @@ struct Piece {
 struct GameState {
     int board[BOARD_HEIGHT][BOARD_WIDTH]; 
     Piece currentPiece;                     
-    Piece nextPiece;                                         
+    Piece nextPiece; 
+    int score;                              
+    int level;                              
+    int linesCleared;                       
+    int baseSpeed;                          
+    int currentSpeed;                      
+    bool gameOver;                                         
 };
 
 #endif
