@@ -37,11 +37,11 @@ struct GameState {
 const int SHAPES[7][PIECE_SIZE][PIECE_SIZE] = {
     {
         {0, 0, 0, 0},
-        {1, 1, 0, 1},
+        {1, 1, 1, 1},
         {0, 0, 0, 0},
         {0, 0, 0, 0}
     },
-    // O - Hinh vuong
+ 
     {
         {0, 0, 0, 0},
         {0, 1, 1, 0},
