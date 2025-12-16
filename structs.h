@@ -34,4 +34,7 @@ struct GameState {
     bool gameOver;                                         
 };
 
+const int SHAPES[7][PIECE_SIZE][PIECE_SIZE] = {};
+
+const char PIECE_SYMBOLS[7] = {'I', 'O', 'T', 'S', 'Z', 'J', 'L'};
 #endif
