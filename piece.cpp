@@ -92,3 +92,13 @@ void moveRight(GameState &game)
         game.currentPiece.x++;
     }
 }
+
+bool moveDown(GameState &game)
+{
+    if (canPlace(game, game.currentPiece, game.currentPiece.x, game.currentPiece.y + 1))
+    {
+        game.currentPiece.y++;
+        return true;
+    }
+    return false;
+}
