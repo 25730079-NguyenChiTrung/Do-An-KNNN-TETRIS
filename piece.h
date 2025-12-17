@@ -14,4 +14,11 @@
 
 #include "structs.h"
 
+Piece createPiece();
+bool canPlace(GameState &game, Piece &piece, int newX, int newY);
+void rotatePiece(GameState &game);
+void moveLeft(GameState &game);
+void moveRight(GameState &game);
+bool moveDown(GameState &game);
+
 #endif
