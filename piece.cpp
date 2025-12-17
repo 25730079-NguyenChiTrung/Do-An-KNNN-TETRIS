@@ -34,3 +34,27 @@ Piece createPiece()
     }
     return p;
 }
+
+bool canPlace(GameState &game, Piece &piece, int newX, int newY)
+{
+    for (int i = 0; i < PIECE_SIZE; i++)
+    {
+        for (int j = 0; j < PIECE_SIZE; j++)
+        {
+            if (piece.shape[i][j] == 1)
+            {
+                int bx = newX + j;
+                int by = newY + i;
+
+                if (bx < 0 || bx >= BOARD_WIDTH)
+                    return false;
+                if (by < 0 || by >= BOARD_HEIGHT)
+                    return false;
+
+                if (game.board[by][bx] != 0)
+                    return false;
+            }
+        }
+    }
+    return true;
+}
