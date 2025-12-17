@@ -84,3 +84,11 @@ void moveLeft(GameState &game)
         game.currentPiece.x--;
     }
 }
+
+void moveRight(GameState &game)
+{
+    if (canPlace(game, game.currentPiece, game.currentPiece.x + 1, game.currentPiece.y))
+    {
+        game.currentPiece.x++;
+    }
+}
