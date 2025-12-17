@@ -34,3 +34,15 @@ struct TrangThai {
     int tocDoHienTai;
     bool ketThuc;
 };
+void khoiTaoBang(TrangThai &tt);
+bool coTheDatKhoi(
+    const TrangThai &tt,
+    const Khoi &khoi,
+    int viTriMoiX,
+    int viTriMoiY
+);
+void datKhoiVaoBang(TrangThai &tt);
+int xoaHangDay(TrangThai &tt);
+void capNhatDiemVaTocDo(TrangThai &tt, int soHangXoa);
+
+#endif
