@@ -58,3 +58,21 @@ bool canPlace(GameState &game, Piece &piece, int newX, int newY)
     }
     return true;
 }
+
+void rotatePiece(GameState &game)
+{
+    Piece rotated = game.currentPiece;
+
+    for (int i = 0; i < PIECE_SIZE; i++)
+    {
+        for (int j = 0; j < PIECE_SIZE; j++)
+        {
+            rotated.shape[i][j] = game.currentPiece.shape[PIECE_SIZE - 1 - j][i];
+        }
+    }
+
+    if (canPlace(game, rotated, rotated.x, rotated.y))
+    {
+        game.currentPiece = rotated;
+    }
+}
