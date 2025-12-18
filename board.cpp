@@ -87,5 +87,17 @@ int xoaHangDay(TrangThai &tt) {
 }
 
 void capNhatDiemVaTocDo(TrangThai &tt, int soHangXoa) {
-    
+    if (soHangXoa == 0) return;
+
+    int bangDiem[5] = {0, 100, 300, 500, 800};
+    tt.diem += bangDiem[soHangXoa] * tt.capDo;
+
+    tt.soHangDaXoa += soHangXoa;
+    tt.capDo = 1 + tt.soHangDaXoa / 10;
+
+    tt.tocDoHienTai =
+        tt.tocDoCoBan - (tt.capDo - 1) * 40;
+
+    if (tt.tocDoHienTai < 100)
+        tt.tocDoHienTai = 100;
 }
