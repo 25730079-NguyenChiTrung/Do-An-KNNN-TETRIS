@@ -33,5 +33,6 @@ bool coTheDatKhoi(
 );
 void datKhoiVaoBang(TrangThai &tt);
 int xoaHangDay(TrangThai &tt);
+void capNhatDiemVaTocDo(TrangThai &tt, int soHangXoa);
 
 #endif
