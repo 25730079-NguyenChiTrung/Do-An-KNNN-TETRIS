@@ -36,3 +36,19 @@ bool coTheDatKhoi(
     }
     return true;
 }
+
+void datKhoiVaoBang(TrangThai &tt) {
+    for (int i = 0; i < KICH_THUOC_KHOI; i++) {
+        for (int j = 0; j < KICH_THUOC_KHOI; j++) {
+            if (tt.khoiHienTai.hinh[i][j] == 1) {
+                int x = tt.khoiHienTai.viTriX + j;
+                int y = tt.khoiHienTai.viTriY + i;
+
+                if (x >= 0 && x < CHIEU_RONG_BANG &&
+                    y >= 0 && y < CHIEU_CAO_BANG) {
+                    tt.bang[y][x] = tt.khoiHienTai.loai + 1;
+                }
+            }
+        }
+    }
+}

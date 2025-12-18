@@ -31,5 +31,6 @@ bool coTheDatKhoi(
     int viTriMoiX,
     int viTriMoiY
 );
+void datKhoiVaoBang(TrangThai &tt);
 
 #endif
