@@ -85,3 +85,7 @@ int xoaHangDay(TrangThai &tt) {
 
     return dem;
 }
+
+void capNhatDiemVaTocDo(TrangThai &tt, int soHangXoa) {
+    
+}
