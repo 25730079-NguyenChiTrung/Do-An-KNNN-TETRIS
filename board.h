@@ -25,5 +25,11 @@ struct TrangThai {
 };
 
 void khoiTaoBang(TrangThai &tt);
+bool coTheDatKhoi(
+    const TrangThai &tt,
+    const Khoi &khoi,
+    int viTriMoiX,
+    int viTriMoiY
+);
 
 #endif
