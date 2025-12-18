@@ -24,4 +24,6 @@ struct TrangThai {
     bool ketThuc;
 };
 
+void khoiTaoBang(TrangThai &tt);
+
 #endif
