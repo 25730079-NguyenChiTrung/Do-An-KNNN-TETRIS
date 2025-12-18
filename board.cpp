@@ -52,3 +52,36 @@ void datKhoiVaoBang(TrangThai &tt) {
         }
     }
 }
+
+int xoaHangDay(TrangThai &tt) {
+    int dem = 0;
+
+    for (int i = CHIEU_CAO_BANG - 1; i >= 0; i--) {
+        bool day = true;
+
+        for (int j = 0; j < CHIEU_RONG_BANG; j++) {
+            if (tt.bang[i][j] == 0) {
+                day = false;
+                break;
+            }
+        }
+
+        if (day) {
+            dem++;
+
+            for (int k = i; k > 0; k--) {
+                for (int j = 0; j < CHIEU_RONG_BANG; j++) {
+                    tt.bang[k][j] = tt.bang[k - 1][j];
+                }
+            }
+
+            for (int j = 0; j < CHIEU_RONG_BANG; j++) {
+                tt.bang[0][j] = 0;
+            }
+
+            i++; // kiem tra lai hang nay
+        }
+    }
+
+    return dem;
+}
