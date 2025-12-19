@@ -11,6 +11,14 @@
 #ifndef INPUT_H
 #define INPUT_H
 
+/*
+ * Kiem tra xem co phim nao duoc nhan khong
+ */
 bool keyPressed();
+
+/*
+ * Doc phim da duoc nhan
+ */
+char getKey();
 
 #endif

@@ -10,7 +10,7 @@
 
 // Thu vien cho Windows
 #ifdef _WIN32
-  #include <conio.h>      // _kbhit()
+  #include <conio.h>      // _kbhit(), _getch()
 #else
 // Thu vien cho Mac/Linux
   #include <termios.h>    // Thay doi che do terminal
@@ -40,5 +40,21 @@ bool keyPressed() {
       return true;
     }
     return false;
+  #endif
+}
+
+char getKey() {
+  #ifdef _WIN32
+    return _getch();
+  #else
+    struct termios oldt, newt;
+    char ch;
+    tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
+    newt.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+    ch = getchar();
+    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+    return ch;
   #endif
 }
