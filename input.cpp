@@ -8,10 +8,16 @@
 
 #include "input.h"
 
-#include <termios.h>    // Thay doi che do terminal
-#include <unistd.h>     // usleep()
-#include <fcntl.h>      // fcntl() - file control
-#include <cstdio>       // getchar(), ungetc()
+// Thu vien cho Windows
+#ifdef _WIN32
+  #include <conio.h>      // _kbhit()
+#else
+// Thu vien cho Mac/Linux
+  #include <termios.h>    // Thay doi che do terminal
+  #include <unistd.h>     // STDIN_FILENO
+  #include <fcntl.h>      // fcntl() - file control
+  #include <cstdio>       // getchar(), ungetc()
+#endif
 
 bool keyPressed() {
   #ifdef _WIN32
