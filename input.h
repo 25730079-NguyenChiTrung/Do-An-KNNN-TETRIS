@@ -7,3 +7,10 @@
  * - Ham sleep va lay thoi gian
  * - Ho tro ca Windows va Mac/Linux
 */
+
+#ifndef INPUT_H
+#define INPUT_H
+
+bool keyPressed();
+
+#endif
