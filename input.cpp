@@ -11,11 +11,13 @@
 // Thu vien cho Windows
 #ifdef _WIN32
   #include <conio.h>      // _kbhit(), _getch()
+  #include <windows.h>    // Sleep(), GetTickCount()
 #else
 // Thu vien cho Mac/Linux
   #include <termios.h>    // Thay doi che do terminal
   #include <unistd.h>     // STDIN_FILENO
   #include <fcntl.h>      // fcntl() - file control
+  #include <sys/time.h>   // gettimeofday()
   #include <cstdio>       // getchar(), ungetc()
 #endif
 
@@ -83,6 +85,7 @@ long long getCurrentTimeMs() {
   #else
       // Mac/Linux
       struct timeval tv;
+      gettimeofday(&tv, NULL);
       return tv.tv_sec * 1000LL + tv.tv_usec / 1000;
   #endif
 }
