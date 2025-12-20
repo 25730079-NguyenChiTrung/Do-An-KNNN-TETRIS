@@ -63,48 +63,47 @@ void ve(GameState &game)
 	cout << "  ║         TETRIS CONSOLE GAME          ║\n";
 	cout << "  ╚══════════════════════════════════════╝\n\n";
 
-	// In vien tren cua bang
+	// Ve bang choi va thong tin
 	cout << "  +";
 	for (int j = 0; j < BOARD_WIDTH * 2; j++)
 		cout << "-";
 	cout << "+     NEXT PIECE:\n";
 
-	// In tung hang cua bang + thong tin ben phai
 	for (int i = 0; i < BOARD_HEIGHT; i++)
 	{
-		// In vien trai
 		cout << "  |";
-
-		// In noi dung hang
 		for (int j = 0; j < BOARD_WIDTH; j++)
 		{
 			if (display[i][j] == ' ')
 			{
-				cout << "  "; // O trong (2 ky tu)
+				cout << "  "; // O trong
 			}
 			else
 			{
-				cout << display[i][j] << " "; // Khoi (ky tu + space)
+				cout << display[i][j] << " "; // Khoi
 			}
 		}
-
-		// In vien phai
 		cout << "|";
 
-		// Vi du:
+		// Ve thong tin ben phai
 		if (i == 1)
 		{
 			cout << "     +--------+";
 		}
 		else if (i >= 2 && i <= 5)
 		{
-			// TODO: Ve nextPiece
 			cout << "     |";
 			int row = i - 2;
 			for (int j = 0; j < PIECE_SIZE; j++)
 			{
-				// TODO: Kiem tra va in nextPiece.shape[row][j]
-				cout << "  "; // Tam thoi in trong
+				if (game.nextPiece.shape[row][j] == 1)
+				{
+					cout << game.nextPiece.symbol << " ";
+				}
+				else
+				{
+					cout << "  ";
+				}
 			}
 			cout << "|";
 		}
@@ -140,11 +139,10 @@ void ve(GameState &game)
 		{
 			cout << "     W   - Rotate";
 		}
-
 		cout << "\n";
 	}
 
-	// In vien duoi cua bang + huong dan
+	// Ve day bang
 	cout << "  +";
 	for (int j = 0; j < BOARD_WIDTH * 2; j++)
 		cout << "-";
