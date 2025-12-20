@@ -22,11 +22,14 @@ void gameLoop(GameState &game) {
   game.currentSpeed = game.baseSpeed;
   game.gameOver = false;
 
+  long long lastFallTime = getCurrentTimeMs();
+
 
   while (!game.gameOver) {
     if (keyPressed()) {
       char key = getKey();
       std::cout << "Phim da nhan: " << key << std::endl;
+      std::cout << "Thoi gian hien tai: " << lastFallTime << std::endl;
     }
   }
 }
