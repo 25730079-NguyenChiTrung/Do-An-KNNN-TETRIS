@@ -26,13 +26,35 @@ void ve(GameState &game)
 
 	for (int i = 0; i < BOARD_HEIGHT; ++i)
 	{
-		for (int j = 0; j < BOARD_WIDTH; ++j) {
-			if (game.board[i][j] == 0) {
+		for (int j = 0; j < BOARD_WIDTH; ++j)
+		{
+			if (game.board[i][j] == 0)
+			{
 				display[i][j] = '.';
-			} else {
+			}
+			else
+			{
 				display[i][j] = '#';
 			}
 		}
 	}
-	
+		
+	for (int i = 0; i < PIECE_SIZE; i++)
+	{
+		for (int j = 0; j < PIECE_SIZE; j++)
+		{
+			if (game.currentPiece.shape[i][j] == 1)
+			{
+				int boardX = game.currentPiece.x + j;
+				int boardY = game.currentPiece.y + i;
+
+				// Kiem tra trong pham vi
+				if (boardY >= 0 && boardY < BOARD_HEIGHT &&
+						boardX >= 0 && boardX < BOARD_WIDTH)
+				{
+					display[boardY][boardX] = game.currentPiece.symbol;
+				}
+			}
+		}
+	}
 }
