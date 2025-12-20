@@ -26,4 +26,8 @@ char getKey();
  */
 void sleepMs(int ms);
 
+/*
+ * Dung de tinh thoi gian (ms) giua cac lan khoi roi xuong
+ */
+long long getCurrentTimeMs();
 #endif

@@ -75,3 +75,14 @@ void sleepMs(int ms) {
     usleep(ms * 1000);
   #endif
 }
+
+long long getCurrentTimeMs() {
+  #ifdef _WIN32
+    // Windows
+    return GetTickCount();
+  #else
+      // Mac/Linux
+      struct timeval tv;
+      return tv.tv_sec * 1000LL + tv.tv_usec / 1000;
+  #endif
+}
