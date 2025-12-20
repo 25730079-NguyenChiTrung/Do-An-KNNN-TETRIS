@@ -154,9 +154,12 @@ void ve(GameState &game)
 void veGameOver(GameState &game)
 {
 	xoaManHinh();
-
 	cout << "\n\n";
 	cout << "  ╔══════════════════════════════════════╗\n";
 	cout << "  ║            GAME OVER!                ║\n";
 	cout << "  ╚══════════════════════════════════════╝\n\n";
+	cout << "       Final Score: " << game.score << "\n";
+	cout << "       Level: " << game.level << "\n";
+	cout << "       Lines Cleared: " << game.linesCleared << "\n\n";
+	cout << "       Press any key to exit...\n";
 }
