@@ -152,3 +152,13 @@ void ve(GameState &game)
 	cout << "                               SPACE - Hard Drop\n";
 	cout << "                               Q     - Quit\n";
 }
+
+void veGameOver(GameState &game)
+{
+	xoaManHinh();
+
+	cout << "\n\n";
+	cout << "  ╔══════════════════════════════════════╗\n";
+	cout << "  ║            GAME OVER!                ║\n";
+	cout << "  ╚══════════════════════════════════════╝\n\n";
+}
