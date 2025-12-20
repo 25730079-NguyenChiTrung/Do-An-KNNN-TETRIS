@@ -21,4 +21,9 @@ bool keyPressed();
  */
 char getKey();
 
+/*
+ * Tam dung chuong trinh trong mot khoang thoi gian
+ */
+void sleepMs(int ms);
+
 #endif
