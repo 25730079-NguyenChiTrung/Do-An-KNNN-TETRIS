@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void xoaManHinh()
+void clearScreen()
 {
 #ifdef _WIN32
 	system("cls");
@@ -13,9 +13,9 @@ void xoaManHinh()
 #endif
 }
 
-void ve(GameState &game)
+void draw(GameState &game)
 {
-	xoaManHinh();
+	clearScreen();
 
 	char display[BOARD_HEIGHT][BOARD_WIDTH];
 
@@ -25,7 +25,7 @@ void ve(GameState &game)
 		{
 			if (game.board[i][j] == 0)
 			{
-				display[i][j] = '.';
+				display[i][j] = ' ';
 			}
 			else
 			{
@@ -146,9 +146,9 @@ void ve(GameState &game)
 	cout << "                               Q     - Quit\n";
 }
 
-void veGameOver(GameState &game)
+void drawGameOver(GameState &game)
 {
-	xoaManHinh();
+	clearScreen();
 	cout << "\n\n";
 	cout << "  ╔══════════════════════════════════════╗\n";
 	cout << "  ║            GAME OVER!                ║\n";

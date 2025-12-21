@@ -3,7 +3,6 @@
  * File: piece.cpp
  */
 #include "piece.h"
-#include "structs.h"
 #include <cstdlib>
 
 Piece createPiece()

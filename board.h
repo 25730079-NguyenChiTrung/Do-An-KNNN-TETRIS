@@ -1,38 +1,32 @@
-#ifndef BANGCHOI_H
-#define BANGCHOI_H
+/*
+ * THANH VIEN 3: XU LY BANG CHOI
+ * File: board.h
+ *
+ * Nhiem vu:
+ * - Khoi tao bang choi
+ * - Dat khoi vao bang
+ * - Xoa cac hang da day
+ * - Cap nhat diem va toc do
+ */
 
-const int CHIEU_RONG_BANG = 10;
-const int CHIEU_CAO_BANG  = 20;
-const int KICH_THUOC_KHOI = 4;
+#ifndef BOARD_H
+#define BOARD_H
 
-struct Khoi {
-    int hinh[KICH_THUOC_KHOI][KICH_THUOC_KHOI];
-    int viTriX;
-    int viTriY;
-    int loai;
-    char kyTu;
-};
+#include "structs.h"
 
-struct TrangThai {
-    int bang[CHIEU_CAO_BANG][CHIEU_RONG_BANG];
-    Khoi khoiHienTai;
-    int diem;
-    int capDo;
-    int soHangDaXoa;
-    int tocDoCoBan;
-    int tocDoHienTai;
-    bool ketThuc;
-};
+// Khoi tao bang choi (xoa toan bo bang)
+void initBoard(GameState &game);
 
-void khoiTaoBang(TrangThai &tt);
-bool coTheDatKhoi(
-    const TrangThai &tt,
-    const Khoi &khoi,
-    int viTriMoiX,
-    int viTriMoiY
-);
-void datKhoiVaoBang(TrangThai &tt);
-int xoaHangDay(TrangThai &tt);
-void capNhatDiemVaTocDo(TrangThai &tt, int soHangXoa);
+// Dat khoi hien tai vao bang
+void placePiece(GameState &game);
+
+// Xoa cac hang da day va tra ve so hang da xoa
+int removeLines(GameState &game);
+
+// Cap nhat diem va toc do sau khi xoa hang
+void updateScoreAndSpeed(GameState &game, int linesRemoved);
+
+// Sinh khoi moi
+void spawnNewPiece(GameState &game);
 
 #endif
