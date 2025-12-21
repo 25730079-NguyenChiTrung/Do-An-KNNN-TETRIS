@@ -8,7 +8,7 @@ Game xếp hình Tetris chạy trên console, được viết bằng C++ sử d�
 
 ## Phân công thành viên
 
-### Thành viên 1: Cấu trúc dữ liệu & Hình dạng khối
+### Thành viên 1 - Nguyễn Thị Thu Uyên: Cấu trúc dữ liệu & Hình dạng khối
 **File:** `structs.h`
 - Định nghĩa các hằng số game (BOARD_WIDTH, BOARD_HEIGHT, PIECE_SIZE)
 - Tạo struct `Piece` (khối Tetris)
@@ -16,7 +16,7 @@ Game xếp hình Tetris chạy trên console, được viết bằng C++ sử d�
 - Định nghĩa 7 hình dạng khối Tetromino (I, O, T, S, Z, J, L)
 - Định nghĩa ký tự hiển thị cho mỗi loại khối
 
-### Thành viên 2: Xử lý khối Tetris
+### Thành viên 2 - Nguyễn Đông Triều: Xử lý khối Tetris
 **Files:** `piece.h`, `piece.cpp`
 - Tạo khối mới ngẫu nhiên (`createPiece`)
 - Kiểm tra va chạm (`canPlace`)
@@ -24,7 +24,7 @@ Game xếp hình Tetris chạy trên console, được viết bằng C++ sử d�
 - Di chuyển khối sang trái/phải (`moveLeft`, `moveRight`)
 - Di chuyển khối xuống dưới (`moveDown`)
 
-### Thành viên 3: Xử lý bảng chơi
+### Thành viên 3 - Nguyễn Đức Trung: Xử lý bảng chơi
 **Files:** `board.h`, `board.cpp`
 - Khởi tạo bảng chơi (`initBoard`)
 - Đặt khối vào bảng (`placePiece`)
@@ -32,7 +32,7 @@ Game xếp hình Tetris chạy trên console, được viết bằng C++ sử d�
 - Cập nhật điểm và tốc độ (`updateScoreAndSpeed`)
 - Sinh khối mới (`spawnNewPiece`)
 
-### Thành viên 4: Hiển thị giao diện
+### Thành viên 4 - Nguyễn Quốc Trung: Hiển thị giao diện
 **Files:** `display.h`, `display.cpp`
 - Xóa màn hình console (`xoaManHinh`)
 - Vẽ toàn bộ màn hình game (`ve`)
@@ -40,7 +40,7 @@ Game xếp hình Tetris chạy trên console, được viết bằng C++ sử d�
 - Hiển thị bảng chơi, khối tiếp theo, điểm số, level, tốc độ
 - Hiển thị hướng dẫn điều khiển
 
-### Thành viên 5: Xử lý Input & Tích hợp
+### Thành viên 5 - Nguyễn Chí Trung: Xử lý Input & Tích hợp
 **Files:** `input.h`, `input.cpp`, `main.cpp`
 - Kiểm tra phím bấm không chặn (`keyPressed`)
 - Đọc phím đã bấm (`getKey`)
