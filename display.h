@@ -3,10 +3,10 @@
 
 #include "structs.h"
 
-void xoaManHinh();
+void clearScreen();
 
-void ve(GameState &game);
+void draw(GameState &game);
 
-void veGameOver(GameState &game);
+void drawGameOver(GameState &game);
 
 #endif
